@@ -1,0 +1,183 @@
+{
+  "area": "Alimentação",
+  "icone": "utensils",
+  "cor": "#ffb347",
+  "descricao": "Alimente-se com consciência e equilíbrio.",
+  "capitulos": [
+    {
+      "id": "alimentacao_1",
+      "titulo": "Comendo com Consciência",
+      "descricao": "A relação entre alimentação e energia vital.",
+      "topicos": [
+        {
+          "titulo": "Alimento como energia",
+          "conteudo": [
+            "O que você come afeta diretamente sua energia e clareza mental.",
+            "Comer devagar e com presença é uma forma de meditação.",
+            "A qualidade dos alimentos influencia seu humor e disposição."
+          ]
+        },
+        {
+          "titulo": "Hidratação",
+          "conteudo": [
+            "Beber água regularmente é essencial para o funcionamento do corpo.",
+            "A desidratação pode causar fadiga e falta de concentração."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_1",
+          "descricao": "Faça uma refeição hoje sem distrações (TV, celular).",
+          "xp": 10,
+          "pontos": 8,
+          "energia": 5,
+          "tipo": "mental"
+        },
+        {
+          "id": "tarefa_2",
+          "descricao": "Beba pelo menos 6 copos de água ao longo do dia.",
+          "xp": 8,
+          "pontos": 6,
+          "energia": 2,
+          "tipo": "fisica"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Você percebeu diferença ao comer com atenção?",
+          "Como estava sua energia após a refeição?",
+          "Pretende repetir essa prática nos próximos dias?"
+        ]
+      }
+    },
+    {
+      "id": "alimentacao_2",
+      "titulo": "Escolhas Saudáveis",
+      "descricao": "Como pequenas mudanças melhoram sua alimentação.",
+      "topicos": [
+        {
+          "titulo": "Planejamento alimentar",
+          "conteudo": [
+            "Planejar as refeições ajuda a evitar escolhas impulsivas.",
+            "Inclua frutas e vegetais diariamente para mais vitalidade."
+          ]
+        },
+        {
+          "titulo": "Reduzindo excessos",
+          "conteudo": [
+            "Evite alimentos ultraprocessados e excesso de açúcar.",
+            "Aprecie o sabor natural dos alimentos."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_1",
+          "descricao": "Inclua uma fruta a mais no seu dia de hoje.",
+          "xp": 7,
+          "pontos": 5,
+          "energia": 2,
+          "tipo": "mental"
+        },
+        {
+          "id": "tarefa_2",
+          "descricao": "Evite doces industrializados por um dia.",
+          "xp": 12,
+          "pontos": 10,
+          "energia": 3,
+          "tipo": "mental"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Foi fácil fazer escolhas mais saudáveis?",
+          "Sentiu diferença no seu bem-estar?",
+          "O que pretende mudar na sua rotina alimentar?"
+        ]
+      }
+    },
+    {
+      "id": "alimentacao_3",
+      "titulo": "Alimentação como Alquimia",
+      "descricao": "Explore como os alimentos atuam como transmissores de energia sutil, e como jejum e digestão consciente se tornam práticas espirituais.",
+      "topicos": [
+        {
+          "titulo": "O alimento como portador de energia",
+          "conteudo": [
+            "De acordo com tradições antigas e modernas como Ayurveda, AMORC e estudos como 'Anticâncer' (David Servan-Schreiber), os alimentos não nutrem apenas o corpo, mas também carregam energia vibracional.",
+            "Alimentos crus, orgânicos e preparados com presença e gratidão mantêm seu campo vital íntegro. Já comidas industrializadas, processadas e sem intenção espiritual tendem a diminuir a vibração corporal.",
+            {
+              "referencia": {
+                "area": "Emoções e Mente",
+                "capituloId": "emocoes_4",
+                "texto": "Veja como alimentos também afetam estados emocionais no capítulo 'Emoções e Mente: Energia em Movimento'."
+              }
+            }
+          ]
+        },
+        {
+          "titulo": "Frequência dos alimentos vivos",
+          "conteudo": [
+            "Estudos como os de Masaru Emoto e práticas do Ayurveda indicam que alimentos 'vivos' — aqueles que brotam, germinam e vibram — possuem alta frequência energética.",
+            "Eles elevam o sistema sutil e limpam bloqueios emocionais e espirituais, enquanto alimentos mortos (congelados, fritos ou em conserva excessiva) reduzem a vitalidade.",
+            "Segundo o Ayurveda, quanto mais prana (energia vital) um alimento contém, mais ele contribui para o equilíbrio dos doshas e do sistema mente-corpo."
+          ]
+        },
+        {
+          "titulo": "Jejum, purificação e estados espirituais",
+          "conteudo": [
+            "Tradicional em todas as escolas iniciáticas, o jejum é uma ferramenta poderosa de clareza mental e expansão espiritual. Ele limpa não apenas o sistema digestivo, mas também as emoções e Mente reprimidas.",
+            "A AMORC e os Essênios praticavam jejum como rito de conexão. Estudos modernos mostram que o jejum intermitente também ativa processos de regeneração celular (autofagia) e equilíbrio hormonal.",
+            {
+              "imagem": "jejum_ritualico.png"
+            }
+          ]
+        },
+        {
+          "titulo": "Digestão, Agni e a transmutação energética",
+          "conteudo": [
+            "Na visão ayurvédica, o Agni (fogo digestivo) é o alquimista interno. Um Agni equilibrado transforma alimentos em energia vital; um Agni fraco gera toxinas (ama) e confusão mental.",
+            "A prática de comer com consciência, respeitando horários, ambiente tranquilo e mastigação lenta fortalece o Agni e transforma o ato de comer em ritual sagrado.",
+            {
+              "referencia": {
+                "area": "Espiritualidade",
+                "capituloId": "espiritualidade_5",
+                "texto": "Veja como o corpo é um templo no capítulo 'O Corpo Quântico e o Templo da Alma'."
+              }
+            }
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_alim_1",
+          "descricao": "Realize o Ritual de Consagração dos Alimentos: antes de comer, agradeça e visualize a energia vital do alimento te nutrindo.",
+          "xp": 14,
+          "pontos": 12,
+          "energia": 4,
+          "tipo": "espiritual"
+        },
+        {
+          "id": "tarefa_alim_2",
+          "descricao": "Experimente um dia com alimentação viva: frutas, vegetais crus e sementes germinadas.",
+          "xp": 16,
+          "pontos": 15,
+          "energia": 5,
+          "tipo": "fisica"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Como foi sua experiência ao consagrar o alimento?",
+          "Sentiu diferença ao ingerir alimentos vivos?",
+          "Percebeu impacto emocional ou espiritual após o jejum ou purificação alimentar?"
+        ]
+      },
+      "pontosMinimos": 0
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "area": "Saúde Física",
+  "icone": "heartbeat",
+  "cor": "#5f5bdc",
+  "descricao": "Cuide do seu corpo, energia e vitalidade.",
+  "capitulos": [
+    {
+      "id": "saude_1",
+      "titulo": "Corpo em Movimento",
+      "descricao": "A importância da atividade física diária para a saúde integral.",
+      "topicos": [
+        {
+          "titulo": "A importância da atividade física",
+          "conteudo": [
+            "Movimentar o corpo é essencial para manter a energia vital fluindo.",
+            "Mesmo pequenas caminhadas diárias já geram grandes benefícios.",
+            "O sedentarismo pode afetar negativamente o humor e a disposição."
+          ]
+        },
+        {
+          "titulo": "Exercício e bem-estar",
+          "conteudo": [
+            "A prática regular de exercícios libera endorfinas, promovendo sensação de bem-estar.",
+            "Encontre uma atividade que você goste para manter a constância."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_1",
+          "descricao": "Faça uma caminhada de 15 minutos hoje.",
+          "xp": 300,
+          "pontos": 10,
+          "energia": -40,
+          "tipo": "fisica"
+        },
+        {
+          "id": "tarefa_2",
+          "descricao": "Alongue-se por 5 minutos ao acordar.",
+          "xp": 65,
+          "pontos": 14,
+          "energia": 163,
+          "tipo": "fisica"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Você realizou a atividade física proposta?",
+          "Como seu corpo reagiu após o exercício?",
+          "Qual foi seu nível de motivação ao longo do dia?"
+        ]
+      }
+    },
+    {
+      "id": "saude_2",
+      "titulo": "Sono e Recuperação",
+      "descricao": "A importância do sono para a saúde física e mental.",
+      "topicos": [
+        {
+          "titulo": "Por que dormir bem?",
+          "conteudo": [
+            "O sono é fundamental para a recuperação do corpo e da mente.",
+            "Dormir mal pode prejudicar o rendimento físico e mental."
+          ]
+        },
+        {
+          "titulo": "Dicas para um sono melhor",
+          "conteudo": [
+            "Evite telas antes de dormir e mantenha um ambiente escuro.",
+            "Crie uma rotina de horários para deitar e acordar."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_1",
+          "descricao": "Desligue o celular 30 minutos antes de dormir.",
+          "xp": 10,
+          "pontos": 8,
+          "energia": 2,
+          "tipo": "mental"
+        },
+        {
+          "id": "tarefa_2",
+          "descricao": "Anote como se sentiu ao acordar hoje.",
+          "xp": 6,
+          "pontos": 4,
+          "energia": 1,
+          "tipo": "reflexiva"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Você conseguiu dormir melhor após as práticas?",
+          "Notou diferença na sua disposição ao acordar?",
+          "Pretende manter esses hábitos?"
+        ]
+      }
+    },
+    {
+      "id": "saude_3",
+      "titulo": "O Corpo Quântico e o Templo da Alma",
+      "descricao": "Explore como o corpo é um campo de consciência materializada. Descubra a relação entre DNA,  e Mente, crenças e espiritualidade em um modelo integrativo da saúde.",
+      "topicos": [
+        {
+          "titulo": "Epigenética e o poder do ambiente interno",
+          "conteudo": [
+            "A epigenética revela que não somos prisioneiros do nosso DNA. Fatores como  e Mente, pensamentos, alimentação e estilo de vida podem ativar ou silenciar genes.",
+            "Bruce Lipton explica como crenças moldam nossa biologia: o ambiente interno criado pela mente afeta diretamente a expressão genética.",
+            {
+              "referencia": {
+                "area": "Espiritualidade",
+                "capituloId": "espiritualidade_3",
+                "texto": "Veja mais sobre biologia e consciência em 'A Mente como Criadora da Matéria'"
+              }
+            }
+          ]
+        },
+        {
+          "titulo": "DNA, espiritualidade e memória vibracional",
+          "conteudo": [
+            "Pesquisas sugerem que o DNA não apenas transmite informação biológica, mas também pode funcionar como antena para campos de consciência.",
+            "A tradição espiritual considera o corpo físico como um 'templo' onde a alma atua por meio da energia vital. Cada célula contém a totalidade da informação do ser."
+          ]
+        },
+        {
+          "titulo": "Sefirá Malkuth e Yesod: os planos do corpo e da energia",
+          "conteudo": [
+            "Na Árvore da Vida da Cabalah Hermética, Malkuth representa o plano físico e Yesod, o plano energético-emocional. Ambos sustentam a manifestação do ser e sua saúde integral.",
+            "Para compreender o corpo espiritual, é necessário alinhar essas duas esferas. Quando há bloqueio energético em Yesod, o corpo físico (Malkuth) manifesta sintomas.",
+            {
+              "imagem": "sefira_malkuth_yesod.png"
+            }
+          ]
+        },
+        {
+          "titulo": "Rastreamento de crenças e sintomas no corpo",
+          "conteudo": [
+            "Crenças limitantes se manifestam fisicamente como dores, doenças ou desequilíbrios recorrentes.",
+            "Louise Hay mapeou centenas de correspondências entre padrões mentais e sintomas. Identificar essas relações pode ser o primeiro passo para a cura.",
+            {
+              "referencia": {
+                "area": "Emoções e Mente",
+                "capituloId": "emocoes_1",
+                "texto": "Veja como as  e Mente impactam o corpo no capítulo sobre Energia em Movimento"
+              }
+            }
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_saude_3_1",
+          "descricao": "Liste 3 sintomas físicos recorrentes que você sente e associe a possíveis crenças limitantes.",
+          "xp": 10,
+          "pontos": 7,
+          "energia": 2,
+          "tipo": "mental"
+        },
+        {
+          "id": "tarefa_saude_3_2",
+          "descricao": "Faça uma meditação visualizando a cura celular através da luz e intenção.",
+          "xp": 8,
+          "pontos": 6,
+          "energia": 3,
+          "tipo": "espiritual"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Você identificou alguma conexão entre crenças e sintomas físicos?",
+          "A prática ajudou a perceber seu corpo como um campo de consciência?"
+        ]
+      },
+      "pontosMinimos": 15
+    },
+    {
+      "id": "saude_4",
+      "titulo": "Movimento, Energia e Geometria",
+      "descricao": "Descubra como o movimento consciente, a respiração profunda e a geometria sagrada elevam a energia vital e alinham corpo, mente e espírito.",
+      "topicos": [
+        {
+          "titulo": "Corpo em oração: dança, yoga e artes marciais",
+          "conteudo": [
+            "Ao mover o corpo com presença e intenção, entramos num estado meditativo. Práticas como Yoga, Qi Gong, dança ritual e artes marciais canalizam a energia vital e harmonizam os centros energéticos (chakras).",
+            "Na tradição hindu, o corpo é um templo em movimento. O Yoga é uma oração em ação. Nas artes marciais orientais, como o Aikido e o Tai Chi, cada gesto conecta o praticante ao fluxo do universo.",
+            "Movimento consciente é mais que exercício: é alinhamento vibracional.",
+            {
+              "referencia": {
+                "area": "Espiritualidade",
+                "capituloId": "espiritualidade_4",
+                "texto": "Veja também como o corpo participa da jornada espiritual no capítulo 'A Árvore da Vida Interior'"
+              }
+            }
+          ]
+        },
+        {
+          "titulo": "Respiração como ponte entre mundos",
+          "conteudo": [
+            "A respiração é a ponte entre o consciente e o inconsciente, entre corpo e mente, entre o mundo físico e o sutil.",
+            "A Respiração Holotrópica, desenvolvida por Stanislav Grof, é usada para acessar estados alterados de consciência e desbloquear traumas emocionais. Outras técnicas incluem Pranayama, Coerência Cardíaca e Respiração Circular.",
+            "A simples observação do fluxo respiratório já promove equilíbrio do sistema nervoso e estado de presença profunda.",
+            {
+              "imagem": "respiracao_consciente.png"
+            }
+          ]
+        },
+        {
+          "titulo": "Geometria sagrada e o campo vibracional humano",
+          "conteudo": [
+            "A Geometria Sagrada é a linguagem da criação. A 'Flor da Vida', o 'Cubo de Metatron' e o 'Merkabah' são símbolos de padrões universais que também se manifestam no corpo humano.",
+            "O campo vibracional do corpo (aura) se organiza em padrões harmônicos. Estudos de bioenergia mostram que formas geométricas podem reordenar a energia vital.",
+            "Movimentos em espiral, círculos e alinhamentos com a geometria do espaço despertam estados elevados de consciência.",
+            {
+              "imagem": "geometria_sagrada_corpo.png"
+            }
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_saude_4_1",
+          "descricao": "Realize a Sequência de Respiração + Movimento consciente: 5 minutos de respiração profunda, seguidos de 10 minutos de movimento fluido (yoga, dança ou alongamento livre).",
+          "xp": 18,
+          "pontos": 14,
+          "energia": 6,
+          "tipo": "fisica"
+        },
+        {
+          "id": "tarefa_saude_4_2",
+          "descricao": "Desenhe ou imprima um símbolo de geometria sagrada (como a Flor da Vida) e mantenha-o por perto ao se movimentar ou meditar.",
+          "xp": 10,
+          "pontos": 8,
+          "energia": 2,
+          "tipo": "espiritual"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Você percebeu diferença na sua energia após o movimento consciente?",
+          "Como foi a experiência de unir respiração e geometria em sua prática?",
+          "Que símbolo ou gesto despertou maior conexão interna para você?"
+        ]
+      },
+      "pontosMinimos": 20
+    }
+  ]
+}

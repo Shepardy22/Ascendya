@@ -1,0 +1,269 @@
+{
+  "area": "Emoções e Mente",
+  "icone": "brain",
+  "cor": "#ff6f91",
+  "descricao": "Aprofunde-se no autoconhecimento emocional.",
+  "capitulos": [
+    {
+      "id": "emocoes_1",
+      "titulo": "Entendendo Suas Emoções",
+      "descricao": "Reconheça e nomeie suas emoções para transformá-las.",
+      "topicos": [
+        {
+          "titulo": "Nomear é dominar",
+          "conteudo": [
+            "Quando nomeamos uma emoção, ganhamos poder sobre ela.",
+            "Evitar não é curar. Observar é transformar.",
+            "Acolher sentimentos é o primeiro passo para o equilíbrio."
+          ]
+        },
+        {
+          "titulo": "Expressão emocional",
+          "conteudo": [
+            "Falar sobre o que sente reduz o peso das emoções.",
+            "Buscar apoio é sinal de força, não de fraqueza."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_1",
+          "descricao": "Escreva 3 emoções que você sentiu hoje.",
+          "xp": 10,
+          "pontos": 10,
+          "energia": 150,
+          "tipo": "emocional"
+        },
+        {
+          "id": "tarefa_2",
+          "descricao": "Converse com alguém sobre um sentimento seu.",
+          "xp": 12,
+          "pontos": 10,
+          "energia": 3,
+          "tipo": "emocional"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Foi fácil identificar suas emoções?",
+          "Houve alguma surpresa no que você escreveu?",
+          "Como se sentiu após esse exercício de autopercepção?"
+        ]
+      }
+    },
+    {
+      "id": "emocoes_2",
+      "titulo": "Resiliência Emocional",
+      "descricao": "Desenvolva a capacidade de lidar com desafios emocionais.",
+      "topicos": [
+        {
+          "titulo": "O que é resiliência?",
+          "conteudo": [
+            "Resiliência é a habilidade de se recuperar após situações difíceis.",
+            "Todos podem fortalecer essa capacidade com prática e autocompaixão."
+          ]
+        },
+        {
+          "titulo": "Práticas de resiliência",
+          "conteudo": [
+            "Respiração profunda e pausas ajudam a regular emoções.",
+            "Reconheça suas conquistas, mesmo as pequenas."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_1",
+          "descricao": "Pratique 5 minutos de respiração profunda.",
+          "xp": 8,
+          "pontos": 6,
+          "energia": 1,
+          "tipo": "mental"
+        },
+        {
+          "id": "tarefa_2",
+          "descricao": "Anote uma situação difícil que superou recentemente.",
+          "xp": 10,
+          "pontos": 8,
+          "energia": 2,
+          "tipo": "reflexiva"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Você se sentiu mais forte após as práticas?",
+          "Conseguiu perceber sua evolução emocional?",
+          "O que pretende praticar para fortalecer sua resiliência?"
+        ]
+      }
+    },
+    {
+      "id": "emocoes_3",
+      "titulo": "Gestão Avançada das Emoções",
+      "descricao": "Aprofunde-se em técnicas avançadas para dominar suas emoções.",
+      "topicos": [
+        {
+          "titulo": "Técnicas de regulação emocional",
+          "conteudo": [
+            "Aprenda estratégias como mindfulness, reestruturação cognitiva e autoempatia.",
+            "Essas técnicas ajudam a manter o equilíbrio mesmo em situações desafiadoras."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_1",
+          "descricao": "Pratique 10 minutos de mindfulness focado nas emoções.",
+          "xp": 15,
+          "pontos": 12,
+          "energia": 2,
+          "tipo": "mental"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Como foi sua experiência com as técnicas avançadas?",
+          "Qual delas você pretende adotar no dia a dia?"
+        ]
+      },
+      "pontosMinimos": 0
+    },
+    {
+      "id": "emocoes_4",
+      "titulo": "Energia em Movimento",
+      "descricao": "Explore como o corpo sente antes da mente e como transformar emoções densas em sabedoria e energia vital.",
+      "topicos": [
+        {
+          "titulo": "O corpo sente antes da mente",
+          "conteudo": [
+            "Neurocientistas como Rick Hanson e psiquiatras como Bessel van der Kolk revelam que o corpo processa emoções antes da mente racional. As reações físicas — tensão, aceleração, contração — são sinais de estados emocionais sutis ou intensos.",
+            "Esse entendimento nos leva a confiar mais na linguagem corporal como bússola emocional.",
+            {
+              "referencia": {
+                "area": "Saúde Física",
+                "capituloId": "saude_3",
+                "texto": "Leia mais sobre a conexão corpo-emoção no capítulo 'O Corpo Quântico e o Templo da Alma'."
+              }
+            }
+          ]
+        },
+        {
+          "titulo": "A neuroquímica do trauma e do perdão",
+          "conteudo": [
+            "Eventos traumáticos mudam nossa química cerebral. A amígdala se torna hiperativa e o cortisol permanece elevado, afetando memória e resposta emocional. Estudos de Eckhart Tolle mostram que perdoar reduz essa carga tóxica emocional.",
+            "A neuroplasticidade permite reprogramar a resposta emocional e curar traumas através de práticas repetidas de presença e aceitação."
+          ]
+        },
+        {
+          "titulo": "Ego, sombra e integração",
+          "conteudo": [
+            "Carl Jung nos ensinou que tudo que reprimimos torna-se sombra. A raiva não acolhida, o medo negado e a tristeza ignorada se manifestam como sintomas ou padrões de autossabotagem.",
+            "Integrar não é eliminar, mas aceitar essas partes com consciência. Louise Hay também apontava que toda emoção não expressa afeta um órgão ou sistema do corpo.",
+            {
+              "referencia": {
+                "area": "Espiritualidade",
+                "capituloId": "espiritualidade_6",
+                "texto": "Veja como as emoções vibram em diferentes frequências no capítulo 'Emoções como Frequência'."
+              }
+            }
+          ]
+        },
+        {
+          "titulo": "Sefirá Hod e Netzach: razão e emoção",
+          "conteudo": [
+            "Na Cabalah Hermética, Hod representa o intelecto e a razão, enquanto Netzach é o fluxo emocional e criativo. Essas esferas dialogam entre si constantemente, e o desequilíbrio entre ambas gera conflito interno.",
+            "Aprender a transitar entre razão e emoção é um dos caminhos da integração psicoespiritual propostos por escolas iniciáticas."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_emo_1",
+          "descricao": "Crie seu 'Mapa das Emoções': identifique onde cada emoção se manifesta no corpo e que crença está associada.",
+          "xp": 12,
+          "pontos": 10,
+          "energia": 3,
+          "tipo": "emocional"
+        },
+        {
+          "id": "tarefa_emo_2",
+          "descricao": "Pratique a 'Técnica da Presença': 5 minutos de respiração consciente sentindo e acolhendo uma emoção específica.",
+          "xp": 10,
+          "pontos": 8,
+          "energia": 2,
+          "tipo": "mental"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Conseguiu identificar emoções no corpo com clareza?",
+          "O que você sentiu ao acolher a emoção em vez de evitá-la?",
+          "Percebeu alguma mudança após fazer o Mapa das Emoções?"
+        ]
+      },
+      "pontosMinimos": 0
+    },
+    {
+      "id": "emocoes_5",
+      "titulo": "Amor, Relacionamentos e Leis Universais",
+      "descricao": "Explore o amor como energia curadora e os vínculos humanos como instrumentos de crescimento espiritual.",
+      "topicos": [
+        {
+          "titulo": "Amor como campo de cura e expansão",
+          "conteudo": [
+            "O amor é mais do que um sentimento — é uma frequência de alta vibração que atua como campo de cura e expansão da consciência. Ele dissolve barreiras internas e facilita a integração entre mente, corpo e espírito.",
+            "No Tao Te Ching, o amor é silencioso, flexível e transformador como a água. No Evangelho Segundo o Espiritismo, o amor é a lei maior e universal, sendo a força por trás da verdadeira evolução moral.",
+            "Quando cultivamos amor incondicional, nos tornamos instrumentos de cura não apenas para nós, mas também para os outros. O amor expande a alma e libera a energia estagnada da dor."
+          ]
+        },
+        {
+          "titulo": "Lei da correspondência nas relações",
+          "conteudo": [
+            "A Lei da Correspondência, presente no Caibalion e em diversas tradições esotéricas, ensina: 'Assim como é dentro, é fora'. Relacionamentos funcionam como espelhos da nossa psique.",
+            "A forma como somos tratados pelos outros reflete muitas vezes o que acreditamos merecer, consciente ou inconscientemente. Trazer luz a esses padrões internos é um passo essencial para transformar as relações externas.",
+            "Relacionamentos não são apenas encontros emocionais — são oportunidades profundas de aprendizado, revelando o que precisa ser curado dentro de nós mesmos."
+          ]
+        },
+        {
+          "titulo": "Encontros kármicos e vínculos evolutivos",
+          "conteudo": [
+            "Segundo ensinamentos da AMORC e de Jung, alguns encontros são marcados por um senso inexplicável de familiaridade. Esses laços podem ser vínculos kármicos, formados em vidas passadas ou em processos de aprendizado coletivo.",
+            "Esses relacionamentos não visam conforto imediato, mas crescimento. Muitas vezes vêm carregados de desafios, testes e lições de perdão, desapego e compaixão.",
+            "Ao entender o caráter espiritual dos vínculos, é possível ressignificar dores e evitar repetir padrões. Perdoar, liberar e aprender são atos de evolução."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_emo_5_1",
+          "descricao": "Participe do 'Círculo de Perdão': escreva uma carta de perdão (não precisa enviar) para alguém com quem sente mágoa.",
+          "xp": 20,
+          "pontos": 14,
+          "energia": 4,
+          "tipo": "emocional"
+        },
+        {
+          "id": "tarefa_emo_5_2",
+          "descricao": "Realize o 'Exercício de União Espiritual': sente-se em silêncio, pense em alguém que ama e envie intencionalmente sentimentos de paz, cura e luz.",
+          "xp": 18,
+          "pontos": 12,
+          "energia": 5,
+          "tipo": "espiritual"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Você sentiu alívio após escrever a carta de perdão?",
+          "Houve alguma mudança na sua percepção da relação?",
+          "Como foi a experiência de enviar amor intencionalmente?"
+        ]
+      },
+      "pontosMinimos": 0
+    }
+  ]
+}

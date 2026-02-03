@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editor de Capítulos</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #1e1e2f;
+      color: #f5f5f5;
+    }
+
+    header {
+      background: #6a5acd;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+      padding: 20px;
+      margin-right: 370px;
+    }
+
+    textarea,
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #444;
+      border-radius: 4px;
+      font-size: 1rem;
+      background-color: #2c2c3d;
+      color: #f5f5f5;
+    }
+
+    textarea::placeholder,
+    input::placeholder {
+      color: #888;
+    }
+
+    button {
+      padding: 10px 15px;
+      background: #6a5acd;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #7b6ee3;
+    }
+
+    .card {
+      background: #2d2d3b;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .card input,
+.card select {
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0 0 15px 0;
+}
+
+.card textarea {
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 120px;   /* altura mínima padrão */
+  max-height: 300px;  /* altura máxima opcional */
+  resize: vertical;   /* permite redimensionar só na vertical */
+  margin: 0 0 15px 0;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+    .section-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #ddd;
+    }
+
+    .ref-btn {
+      margin-top: -10px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 80px;
+      right: 0;
+      width: 350px;
+      height: calc(100% - 80px);
+      background: #2e2e3f;
+      border-left: 1px solid #444;
+      overflow-y: auto;
+      box-shadow: -2px 0 10px rgba(0, 0, 0, 0.4);
+      padding: 20px 10px 20px 20px;
+      z-index: 10;
+      color: #f5f5f5;
+    }
+
+    .sidebar h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #b4a8ff;
+    }
+
+    .area-item,
+    .capitulo-item,
+    .topico-item {
+      margin-bottom: 5px;
+      cursor: pointer;
+      color: #dcdcff;
+    }
+
+    .capitulo-list,
+    .topico-list {
+      margin-left: 15px;
+      display: none;
+    }
+
+    .expanded>.capitulo-list,
+    .expanded>.topico-list {
+      display: block;
+    }
+
+    .dropdown-toggle {
+      font-weight: bold;
+      cursor: pointer;
+      color: #b4a8ff;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Editor de Capítulos</h1>
+    <button onclick="loadJSON()">📂 Carregar JSON</button>
+    <button onclick="saveJSON()">💾 Salvar JSON</button>
+    
+  </header>
+
+  <div class="container">
+    <div id="editor"></div>
+  </div>
+
+  <div class="sidebar" id="sidebarMenu">
+    <h3>Referências</h3>
+    <div id="areasMenu"></div>
+  </div>
+
+  <script>
+    // Variáveis globais únicas
+    let data = {};
+    let allAreasData = []; // [{area, capitulos, ...}]
+    const editorDiv = document.getElementById('editor');
+    const areasMenuDiv = document.getElementById('areasMenu');
+    let lastFocusedTextarea = null;
+
+    // Salva o último textarea focado
+    document.addEventListener('focusin', (e) => {
+      if (e.target.tagName === 'TEXTAREA') {
+        lastFocusedTextarea = e.target;
+      }
+    });
+
+    // Carrega todos os arquivos JSON da pasta data
+    async function loadAllAreas() {
+      if (!window.electronAPI || !window.electronAPI.readAllJsonFiles) return;
+      const files = await window.electronAPI.readAllJsonFiles('data');
+      allAreasData = files; // [{area, capitulos, ...}]
+      renderAreasMenu();
+    }
+
+    // Renderiza o menu lateral
+    function renderAreasMenu() {
+      areasMenuDiv.innerHTML = '';
+      allAreasData.forEach((areaData, areaIdx) => {
+        const areaDiv = document.createElement('div');
+        areaDiv.className = 'area-item';
+
+        const areaToggle = document.createElement('button');
+        areaToggle.className = 'dropdown-toggle';
+        areaToggle.textContent = '▶';
+        areaToggle.onclick = () => {
+          areaDiv.classList.toggle('expanded');
+          areaToggle.textContent = areaDiv.classList.contains('expanded') ? '▼' : '▶';
+        };
+
+        const areaLabel = document.createElement('span');
+        areaLabel.textContent = areaData.area;
+
+        areaDiv.appendChild(areaToggle);
+        areaDiv.appendChild(areaLabel);
+
+        // Capítulos
+        const capList = document.createElement('div');
+        capList.className = 'capitulo-list';
+        (areaData.capitulos || []).forEach((cap, capIdx) => {
+          const capDiv = document.createElement('div');
+          capDiv.className = 'capitulo-item';
+
+          const capToggle = document.createElement('button');
+          capToggle.className = 'dropdown-toggle';
+          capToggle.textContent = '▶';
+          capToggle.onclick = (e) => {
+            e.stopPropagation();
+            capDiv.classList.toggle('expanded');
+            capToggle.textContent = capDiv.classList.contains('expanded') ? '▼' : '▶';
+          };
+
+          const capLabel = document.createElement('span');
+          capLabel.textContent = cap.titulo;
+
+          capDiv.appendChild(capToggle);
+          capDiv.appendChild(capLabel);
+
+          // Tópicos
+          const topList = document.createElement('div');
+          topList.className = 'topico-list';
+          (cap.topicos || []).forEach((top, topIdx) => {
+            const topDiv = document.createElement('div');
+            topDiv.className = 'topico-item';
+            topDiv.textContent = top.titulo;
+            topDiv.onclick = () => inserirReferenciaViaMenu(areaData.area, cap.id || capIdx, top.titulo);
+            topList.appendChild(topDiv);
+          });
+
+          capDiv.appendChild(topList);
+          capList.appendChild(capDiv);
+        });
+
+        areaDiv.appendChild(capList);
+        areasMenuDiv.appendChild(areaDiv);
+      });
+    }
+
+    // Insere referência no editor ao clicar no menu lateral
+    function inserirReferenciaViaMenu(area, capituloId, topicoTitulo) {
+      const textarea = lastFocusedTextarea;
+      if (!textarea) {
+        alert('Selecione um campo de conteúdo de tópico para inserir a referência.');
+        return;
+      }
+      const ref = {
+        referencia: {
+          area,
+          capituloId,
+          texto: `Referência ao tópico "${topicoTitulo}"`
+        }
+      };
+      const currentValue = textarea.value.trim();
+      const refText = `\n\n${JSON.stringify(ref, null, 2)}\n\n`;
+      textarea.value = currentValue + refText;
+      textarea.dispatchEvent(new Event('change'));
+    }
+
+    // Funções do editor principal
+    async function loadJSON() {
+      if (!window.electronAPI || !window.electronAPI.openFileFromData) return;
+      const file = await window.electronAPI.openFileFromData();
+      if (!file) return;
+      data = file;
+      renderEditor();
+    }
+
+    function saveJSON() {
+      if (!window.electronAPI || !window.electronAPI.saveJSON) return;
+      window.electronAPI.saveJSON(data);
+    }
+
+    function renderEditor() {
+      editorDiv.innerHTML = '';
+      if (!data || !data.area) return;
+
+      // Botão para adicionar novo capítulo
+      const addCapBtn = document.createElement('button');
+      addCapBtn.textContent = '➕ Novo Capítulo';
+      addCapBtn.onclick = () => criarNovoCapitulo();
+      editorDiv.appendChild(addCapBtn);
+
+      (data.capitulos || []).forEach((cap, capIndex) => {
+        const capCard = document.createElement('div');
+        capCard.className = 'card';
+
+        // Botão de expandir/recolher
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'dropdown-toggle';
+        toggleBtn.style.float = 'left';
+        toggleBtn.style.marginRight = '10px';
+        toggleBtn.textContent = cap._collapsed ? '▶' : '▼';
+        toggleBtn.onclick = () => {
+          cap._collapsed = !cap._collapsed;
+          renderEditor();
+        };
+        capCard.appendChild(toggleBtn);
+
+        // Título do Capítulo (sempre visível)
+        const tituloLabel = document.createElement('div');
+        tituloLabel.className = 'section-title';
+        tituloLabel.style.display = 'inline-block';
+        tituloLabel.style.marginLeft = '5px';
+        tituloLabel.textContent = cap.titulo || '(Sem título)';
+        capCard.appendChild(tituloLabel);
+
+        // Botão de excluir capítulo (discreto, pequeno, canto direito)
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = '🗑️';
+        deleteBtn.title = 'Excluir Capítulo';
+        deleteBtn.style.background = 'none';
+        deleteBtn.style.border = 'none';
+        deleteBtn.style.color = '#aaa';
+        deleteBtn.style.fontSize = '1rem';
+        deleteBtn.style.padding = '2px 6px';
+        deleteBtn.style.float = 'right';
+        deleteBtn.style.marginLeft = '10px';
+        deleteBtn.style.cursor = 'pointer';
+        deleteBtn.onmouseover = () => { deleteBtn.style.color = '#ff6a6a'; };
+        deleteBtn.onmouseout = () => { deleteBtn.style.color = '#aaa'; };
+        deleteBtn.onclick = () => {
+          if (confirm('Tem certeza que deseja excluir este capítulo?')) {
+            excluirCapitulo(capIndex);
+          }
+        };
+        capCard.appendChild(deleteBtn);
+
+        // Se estiver recolhido, não renderiza o restante dos campos
+        if (cap._collapsed) {
+          editorDiv.appendChild(capCard);
+          return;
+        }
+
+        // Campo de edição do título
+        const inputTitulo = document.createElement('input');
+        inputTitulo.id = `capitulo-${capIndex}-titulo`;
+        inputTitulo.value = cap.titulo || '';
+        inputTitulo.addEventListener('input', (e) => updateCapitulo(capIndex, 'titulo', e.target.value));
+        capCard.appendChild(inputTitulo);
+
+        // Descrição
+        const descLabel = document.createElement('div');
+        descLabel.className = 'section-title';
+        descLabel.textContent = 'Descrição';
+        capCard.appendChild(descLabel);
+
+        const textareaDesc = document.createElement('textarea');
+        textareaDesc.id = `capitulo-${capIndex}-desc`;
+        textareaDesc.value = cap.descricao || '';
+        textareaDesc.addEventListener('input', (e) => updateCapitulo(capIndex, 'descricao', e.target.value));
+        capCard.appendChild(textareaDesc);
+
+        // Tópicos
+        (cap.topicos || []).forEach((topico, topIndex) => {
+          const topicoDiv = document.createElement('div');
+          topicoDiv.className = 'card';
+
+          // Título do Tópico
+          const topicoTituloLabel = document.createElement('div');
+          topicoTituloLabel.className = 'section-title';
+          topicoTituloLabel.textContent = 'Título do Tópico';
+          topicoDiv.appendChild(topicoTituloLabel);
+
+          const inputTopicoTitulo = document.createElement('input');
+          inputTopicoTitulo.id = `topico-${capIndex}-${topIndex}-titulo`;
+          inputTopicoTitulo.value = topico.titulo || '';
+          inputTopicoTitulo.addEventListener('input', (e) => updateTopicoTitulo(capIndex, topIndex, e.target.value));
+          topicoDiv.appendChild(inputTopicoTitulo);
+
+          // Conteúdo do Tópico
+          const topicoConteudoLabel = document.createElement('div');
+          topicoConteudoLabel.className = 'section-title';
+          topicoConteudoLabel.textContent = 'Conteúdo do Tópico';
+          topicoDiv.appendChild(topicoConteudoLabel);
+
+          const textareaConteudo = document.createElement('textarea');
+          textareaConteudo.id = `topico-${capIndex}-${topIndex}`;
+          textareaConteudo.value = (topico.conteudo || []).map(c => typeof c === 'string' ? c : JSON.stringify(c)).join('\n\n');
+          textareaConteudo.addEventListener('input', (e) => updateTopico(capIndex, topIndex, e.target.value));
+          textareaConteudo.addEventListener('focus', (e) => {
+            lastFocusedTextarea = e.target;
+          });
+          topicoDiv.appendChild(textareaConteudo);
+
+          // Botão de adicionar imagem
+          const refBtnDiv = document.createElement('div');
+          refBtnDiv.className = 'ref-btn';
+          const imgBtn = document.createElement('button');
+          imgBtn.textContent = '🖼️ Adicionar Imagem';
+          imgBtn.addEventListener('click', () => {
+            adicionarImagemAoTopico(capIndex, topIndex);
+          });
+          refBtnDiv.appendChild(imgBtn);
+          topicoDiv.appendChild(refBtnDiv);
+
+          capCard.appendChild(topicoDiv);
+        });
+
+        // Botão adicionar tópico
+        const addTopicoBtn = document.createElement('button');
+        addTopicoBtn.textContent = '➕ Novo Tópico';
+        addTopicoBtn.onclick = () => criarNovoTopico(capIndex);
+        capCard.appendChild(addTopicoBtn);
+
+        // Tarefas
+        (cap.tarefas || []).forEach((tarefa, tIndex) => {
+          const tarefaDiv = document.createElement('div');
+          tarefaDiv.className = 'card';
+
+          const tarefaLabel = document.createElement('div');
+          tarefaLabel.className = 'section-title';
+          tarefaLabel.textContent = 'Tarefa';
+          tarefaDiv.appendChild(tarefaLabel);
+
+          const inputDescricao = document.createElement('input');
+          inputDescricao.value = tarefa.descricao || '';
+          inputDescricao.placeholder = 'Descrição';
+          inputDescricao.addEventListener('input', (e) => updateTarefa(capIndex, tIndex, 'descricao', e.target.value));
+          tarefaDiv.appendChild(inputDescricao);
+
+          const inputXp = document.createElement('input');
+          inputXp.value = tarefa.xp || '';
+          inputXp.placeholder = 'XP';
+          inputXp.type = 'number';
+          inputXp.addEventListener('input', (e) => updateTarefa(capIndex, tIndex, 'xp', e.target.value));
+          tarefaDiv.appendChild(inputXp);
+
+          const inputPontos = document.createElement('input');
+          inputPontos.value = tarefa.pontos || '';
+          inputPontos.placeholder = 'Pontos';
+          inputPontos.type = 'number';
+          inputPontos.addEventListener('input', (e) => updateTarefa(capIndex, tIndex, 'pontos', e.target.value));
+          tarefaDiv.appendChild(inputPontos);
+
+          const inputEnergia = document.createElement('input');
+          inputEnergia.value = tarefa.energia || '';
+          inputEnergia.placeholder = 'Energia';
+          inputEnergia.type = 'number';
+          inputEnergia.addEventListener('input', (e) => updateTarefa(capIndex, tIndex, 'energia', e.target.value));
+          tarefaDiv.appendChild(inputEnergia);
+
+          const inputTipo = document.createElement('input');
+          inputTipo.value = tarefa.tipo || '';
+          inputTipo.placeholder = 'Tipo';
+          inputTipo.addEventListener('input', (e) => updateTarefa(capIndex, tIndex, 'tipo', e.target.value));
+          tarefaDiv.appendChild(inputTipo);
+
+          capCard.appendChild(tarefaDiv);
+        });
+
+        // Botão adicionar tarefa
+        const addTarefaBtn = document.createElement('button');
+        addTarefaBtn.textContent = '➕ Nova Tarefa';
+        addTarefaBtn.onclick = () => criarNovaTarefa(capIndex);
+        capCard.appendChild(addTarefaBtn);
+
+        // Feedback
+        if (cap.feedback) {
+          const feedbackDiv = document.createElement('div');
+          feedbackDiv.className = 'card';
+          const feedbackLabel = document.createElement('div');
+          feedbackLabel.className = 'section-title';
+          feedbackLabel.textContent = 'Feedback';
+          feedbackDiv.appendChild(feedbackLabel);
+
+            // Checkbox ativo
+            const ativoLabel = document.createElement('label');
+            ativoLabel.style.display = 'inline-flex';
+            ativoLabel.style.alignItems = 'baseline';
+            ativoLabel.style.gap = '6px';
+            ativoLabel.style.fontSize = '1rem';
+            const ativoCheckbox = document.createElement('input');
+            ativoCheckbox.type = 'checkbox';
+            ativoCheckbox.style.verticalAlign = 'middle';
+            ativoCheckbox.checked = !!cap.feedback.ativo;
+            ativoCheckbox.onchange = (e) => {
+              cap.feedback.ativo = e.target.checked;
+            };
+            ativoLabel.appendChild(ativoCheckbox);
+            ativoLabel.appendChild(document.createTextNode('Ativo'));
+            feedbackDiv.appendChild(ativoLabel);
+
+          // Perguntas
+          (cap.feedback.perguntas || []).forEach((pergunta, pIdx) => {
+            const inputPergunta = document.createElement('input');
+            inputPergunta.value = pergunta;
+            inputPergunta.placeholder = 'Pergunta do feedback';
+            inputPergunta.oninput = (e) => {
+              cap.feedback.perguntas[pIdx] = e.target.value;
+            };
+            feedbackDiv.appendChild(inputPergunta);
+          });
+
+          // Botão adicionar pergunta
+          const addPerguntaBtn = document.createElement('button');
+          addPerguntaBtn.textContent = '➕ Nova Pergunta';
+          addPerguntaBtn.onclick = () => {
+            cap.feedback.perguntas.push('');
+            renderEditor();
+          };
+          feedbackDiv.appendChild(addPerguntaBtn);
+
+          capCard.appendChild(feedbackDiv);
+        }
+
+        // Botão adicionar feedback
+        const addFeedbackBtn = document.createElement('button');
+        addFeedbackBtn.textContent = '➕ Feedback';
+        addFeedbackBtn.onclick = () => criarFeedback(capIndex);
+        capCard.appendChild(addFeedbackBtn);
+
+        editorDiv.appendChild(capCard);
+      });
+    }
+    // Funções auxiliares para edição
+    window.updateCapitulo = function (index, key, value) {
+      if (!data.capitulos || !data.capitulos[index]) return;
+      data.capitulos[index][key] = value;
+    };
+
+    window.updateTopicoTitulo = function (capIndex, topIndex, value) {
+      if (!data.capitulos || !data.capitulos[capIndex] || !data.capitulos[capIndex].topicos[topIndex]) return;
+      data.capitulos[capIndex].topicos[topIndex].titulo = value;
+    };
+
+    window.updateTopico = function (capIndex, topIndex, value) {
+      if (!data.capitulos || !data.capitulos[capIndex] || !data.capitulos[capIndex].topicos[topIndex]) return;
+      const linhas = value.split('\n\n');
+      data.capitulos[capIndex].topicos[topIndex].conteudo = linhas.map(l => {
+        try {
+          return JSON.parse(l);
+        } catch {
+          return l;
+        }
+      });
+    };
+
+    window.updateTarefa = function (capIndex, tIndex, key, value) {
+      if (!data.capitulos || !data.capitulos[capIndex] || !data.capitulos[capIndex].tarefas[tIndex]) return;
+      const tarefa = data.capitulos[capIndex].tarefas[tIndex];
+      tarefa[key] = isNaN(value) ? value : parseInt(value);
+    };
+
+    window.inserirReferencia = function (capIndex, topIndex) {
+      if (!data.capitulos || !data.capitulos[capIndex] || !data.capitulos[capIndex].topicos[topIndex]) return;
+      const ref = {
+        referencia: {
+          area: data.area || "Área",
+          capituloId: data.capitulos[capIndex].id || capIndex,
+          texto: "Texto da referência aqui"
+        }
+      };
+      const textarea = document.getElementById(`topico-${capIndex}-${topIndex}`);
+      const currentValue = textarea.value.trim();
+      const refText = `\n\n${JSON.stringify(ref, null, 2)}\n\n`;
+      textarea.value = currentValue + refText;
+      textarea.dispatchEvent(new Event('change'));
+    };
+    
+
+    function adicionarImagemAoTopico(capIndex, topIndex) {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'image/*';
+      input.onchange = async (event) => {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        // Conta quantas imagens já existem neste capítulo
+        const cap = data.capitulos[capIndex];
+        let imgCount = 1;
+        const conteudo = cap.topicos[topIndex].conteudo || [];
+        conteudo.forEach(item => {
+          if (typeof item === 'object' && item.imagem && item.imagem.startsWith(cap.id + '_image_')) {
+            imgCount++;
+          }
+        });
+
+        // Gera nome da imagem
+        const ext = file.name.split('.').pop();
+        const nomeImagem = `${cap.id}_image_${imgCount}.${ext}`;
+
+        // Salva imagem via Electron
+        if (window.electronAPI && window.electronAPI.saveImage) {
+          const reader = new FileReader();
+          reader.onload = () => {
+            window.electronAPI.saveImage(nomeImagem, reader.result);
+            // Adiciona referência ao conteúdo do tópico
+            const textarea = document.getElementById(`topico-${capIndex}-${topIndex}`);
+            let currentValue = textarea.value.trim();
+            if (currentValue.length > 0) currentValue += '\n\n';
+            const refText = `${JSON.stringify({ imagem: nomeImagem })}\n\n`;
+            textarea.value = currentValue + refText;
+            // Atualiza o objeto JS
+            window.updateTopico(capIndex, topIndex, textarea.value);
+            // Mantém o foco e o cursor ao final
+            textarea.focus();
+            textarea.selectionStart = textarea.selectionEnd = textarea.value.length;
+            alert('Imagem salva e referência inserida!');
+          };
+          reader.readAsDataURL(file);
+        }
+      };
+      input.click();
+    }
+
+    function criarNovoCapitulo() {
+      salvarCamposAtuais()
+      if (!data.capitulos) data.capitulos = [];
+      const prefixo = data.capitulos[0]?.id?.split('_')[0] || 'capitulo';
+      const numeros = data.capitulos.map(c => parseInt((c.id || '').split('_')[1])).filter(n => !isNaN(n));
+      const proximoNum = (numeros.length ? Math.max(...numeros) : 0) + 1;
+      const novoCap = {
+        id: `${prefixo}_${proximoNum}`,
+        titulo: '',
+        descricao: '',
+        topicos: [],
+        tarefas: [],
+        feedback: { ativo: false, perguntas: [] }
+      };
+      data.capitulos.push(novoCap);
+      renderEditor();
+    }
+
+
+    function salvarCamposAtuais() {
+      // Salva todos os campos de texto dos tópicos
+      (data.capitulos || []).forEach((cap, capIndex) => {
+        (cap.topicos || []).forEach((topico, topIndex) => {
+          const textarea = document.getElementById(`topico-${capIndex}-${topIndex}`);
+          if (textarea) {
+            window.updateTopico(capIndex, topIndex, textarea.value);
+          }
+        });
+        // Salva campos de título dos tópicos
+        (cap.topicos || []).forEach((topico, topIndex) => {
+          const input = document.querySelector(`#topico-${capIndex}-${topIndex}-titulo`);
+          if (input) {
+            window.updateTopicoTitulo(capIndex, topIndex, input.value);
+          }
+        });
+        // Salva campos de capítulo
+        const inputTitulo = document.querySelector(`#capitulo-${capIndex}-titulo`);
+        if (inputTitulo) {
+          window.updateCapitulo(capIndex, 'titulo', inputTitulo.value);
+        }
+        const textareaDesc = document.querySelector(`#capitulo-${capIndex}-desc`);
+        if (textareaDesc) {
+          window.updateCapitulo(capIndex, 'descricao', textareaDesc.value);
+        }
+      });
+    }
+
+
+    function criarNovoTopico(capIndex) {
+      salvarCamposAtuais();
+      const cap = data.capitulos[capIndex];
+      cap.topicos.push({ titulo: '', conteudo: [] });
+      renderEditor();
+    }
+
+    function criarNovaTarefa(capIndex) {
+      salvarCamposAtuais();
+      const cap = data.capitulos[capIndex];
+      const proximoNum = (cap.tarefas?.length || 0) + 1;
+      cap.tarefas.push({
+        id: `tarefa_${proximoNum}`,
+        descricao: '',
+        xp: 0,
+        pontos: 0,
+        energia: 0,
+        tipo: ''
+      });
+      renderEditor();
+    }
+
+    function criarFeedback(capIndex) {
+      salvarCamposAtuais();
+      const cap = data.capitulos[capIndex];
+      cap.feedback = { ativo: true, perguntas: [''] };
+      renderEditor();
+    }
+    
+    function excluirCapitulo(capIndex) {
+      if (data.capitulos && data.capitulos[capIndex]) {
+        data.capitulos.splice(capIndex, 1);
+        renderEditor();
+      }
+    }
+    
+    // Inicializa o menu lateral ao carregar a página
+    loadAllAreas();
+
+
+  </script>
+</body>
+
+</html>

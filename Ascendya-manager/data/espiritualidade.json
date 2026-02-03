@@ -1,0 +1,388 @@
+{
+  "area": "espiritualidade",
+  "icone": "spa",
+  "cor": "#a280f7",
+  "descricao": "Desvende a realidade além da matéria.",
+  "capitulos": [
+    {
+      "id": "espiritualidade_1",
+      "titulo": "O Princípio Mental: Tudo é Consciência",
+      "descricao": "Explore como a mente molda a realidade física e espiritual através dos princípios do Mentalismo, da física quântica e da Cabalah Hermética.",
+      "topicos": [
+        {
+          "titulo": "Mentalismo e a Origem da Realidade",
+          "conteudo": [
+            "O Princípio do Mentalismo é a base de todas as leis herméticas. Ele afirma que tudo o que existe é uma manifestação da mente universal. Essa ideia, presente no Caibalion, é compartilhada por tradições como o Vedanta, a Cabalah, o Gnosticismo e a Psicologia Transpessoal.",
+            "Na prática, isso quer dizer que tudo o que percebemos — objetos, eventos, emoções — são produtos da consciência. Nada existe sem um observador. A realidade é, portanto, criada de dentro para fora.",
+            "Um exemplo prático é o efeito placebo: quando uma pessoa acredita que está recebendo um medicamento eficaz, o corpo responde com efeitos reais, mesmo quando recebe apenas uma substância inerte. Isso demonstra o poder da mente sobre a biologia.",
+            {
+              "referencia": {
+                "area": "Saúde Física",
+                "capituloId": "saude_fisica_1",
+                "texto": "Explore a influência mental no corpo físico em Capítulo 3 – O Corpo Quântico e o Templo da Alma."
+              }
+            }
+          ]
+        },
+        {
+          "titulo": "O Observador e a Física Quântica",
+          "conteudo": [
+            "A física quântica nos mostra que o observador influencia o comportamento das partículas. O famoso experimento da dupla fenda revelou que elétrons mudam de comportamento ao serem observados, provando que a consciência interage com a matéria.",
+            "Essa descoberta rompe com a ideia de um universo objetivo e independente. Ela valida a sabedoria de tradições espirituais que afirmam que somos cocriadores da realidade.",
+            "Amit Goswami explica que, ao observarmos, colapsamos a onda de possibilidades em uma realidade concreta. Ou seja, ao escolher onde colocar sua atenção, você escolhe o tipo de realidade que irá vivenciar.",
+            {
+              "referencia": {
+                "area": "Emoções e Mente",
+                "capituloId": "emocoes_1",
+                "texto": "Aprofunde sobre energia emocional no Capítulo 4 – Emoções e Mente: Energia em Movimento"
+              }
+            }
+          ]
+        },
+        {
+          "titulo": "A Mente como Criadora da Matéria",
+          "conteudo": [
+            "Pesquisadores como Bruce Lipton demonstraram que o DNA não é um destino fixo, mas responde aos estímulos ambientais, especialmente os emocionais. Crenças limitantes podem desencadear doenças, enquanto sentimentos positivos podem ativar genes de cura.",
+            "A mente influencia a expressão dos genes através do ambiente interno que cria: seus pensamentos e emoções geram hormônios e neurotransmissores que informam as células sobre o estado do mundo externo.",
+            "Essa plasticidade genética é a base da autocura e da manifestação consciente. Somos biologia moldada pela consciência.",
+            {
+              "referencia": {
+                "area": "financas",
+                "capituloId": "financas_1",
+                "texto": "Reflexões sobre a abundância mental no Capítulo 7 – Finanças e Energia"
+              }
+            }
+          ]
+        },
+        {
+          "titulo": "Sefirá Kether: A Centelha Original",
+          "conteudo": [
+            "Kether, no topo da Árvore da Vida, representa o ponto de origem do universo. Não é uma entidade ou objeto, mas um estado puro de potencial, onde tudo existe em unidade.",
+            "É a centelha divina que ainda vibra dentro de cada ser. Retornar a essa essência é lembrar que você é parte do todo, não uma parte isolada.",
+            "Estudos modernos de física unificada buscam esse mesmo ponto: uma teoria que unifica todas as forças da natureza. Espiritualidade e ciência se aproximam, ambas apontando para uma origem única e inteligente.",
+            {
+              "referencia": {
+                "area": "espiritualidade",
+                "capituloId": "espiritualidade_10",
+                "texto": "Descubra mais sobre a Árvore da Vida no Capítulo 10 – A Árvore da Vida Interior"
+              }
+            }
+          ]
+        },
+        {
+          "titulo": "Prática: Observe, Crie e Expanda",
+          "conteudo": [
+            "Prática guiada para desenvolver a observação consciente dos próprios pensamentos e criar afirmações que moldam a realidade desejada. Inclui meditação com foco em visualização e escrita consciente."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_esp_1",
+          "descricao": "Reflexão guiada sobre pensamentos predominantes e sua relação com acontecimentos diários.",
+          "xp": 8,
+          "pontos": 5,
+          "energia": 2,
+          "tipo": "mental"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Como seus pensamentos moldam sua realidade física?",
+          "Você já percebeu mudanças físicas a partir de estados mentais?"
+        ]
+      },
+      "pontosMinimos": 0
+    },
+    {
+      "id": "espiritualidade_2",
+      "titulo": "Vibração, Ritmo e Polaridade",
+      "descricao": "Explore como emoções, intenções e ritmos naturais se conectam à estrutura vibracional do universo e do ser humano.",
+      "topicos": [
+        {
+          "titulo": "Emoções como Frequência",
+          "conteudo": [
+            "Cada emoção carrega uma frequência vibracional. Emoções como medo e raiva reduzem o campo de energia e afetam a saúde, enquanto amor, gratidão e compaixão expandem esse campo.",
+            {
+              "referencia": {
+                "area": "Emoções e Mente",
+                "capituloId": "emocoes_1",
+                "texto": "Entenda mais sobre emoções no Capítulo 4 – Emoções: Energia em Movimento"
+              }
+            }
+          ]
+        },
+        {
+          "titulo": "Átomos, Som, Água e Intenção",
+          "conteudo": [
+            "Masaru Emoto demonstrou que palavras e intenções afetam a cristalização da água. Como o corpo humano é composto por mais de 70% de água, esses efeitos também se refletem em nós.",
+            "Sons, mantras e palavras têm impacto direto sobre o campo vibracional e físico. A vibração sonora pode harmonizar ou desorganizar estruturas celulares."
+          ]
+        },
+        {
+          "titulo": "O Corpo e o Ritmo Universal",
+          "conteudo": [
+            "O corpo segue ritmos naturais sincronizados com o universo — dia e noite, marés, fases lunares. A desconexão desses ritmos afeta a vitalidade e o equilíbrio interior.",
+            "Práticas de respiração consciente, como a respiração rítmica, ajudam a sincronizar o corpo com o fluxo da vida e equilibrar os hemisférios cerebrais."
+          ]
+        },
+        {
+          "titulo": "Prática: Diário Vibracional + Respiração Rítmica",
+          "conteudo": [
+            "Durante 7 dias, registre no Diário Vibracional os estados emocionais predominantes e aplique a técnica da respiração 4-4-4-4 diariamente. Observe como seus padrões vibracionais se transformam com o tempo."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_esp_2",
+          "descricao": "Prática combinada: Registre emoções no Diário Vibracional por 7 dias e aplique a respiração 4-4-4-4 diariamente.",
+          "xp": 10,
+          "pontos": 6,
+          "energia": 3,
+          "tipo": "respiracao"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Você percebe mais equilíbrio quando segue seus próprios ritmos naturais?",
+          "A prática de respiração consciente mudou seu estado mental ou físico?"
+        ]
+      },
+      "pontosMinimos": 10
+    },
+    {
+      "id": "espiritualidade_3",
+      "titulo": "Tempo, Morte e Transcendência",
+      "descricao": "Explore o tempo como ilusão, a morte como retorno à origem e a reencarnação como ferramenta de evolução da alma.",
+      "topicos": [
+        {
+          "titulo": "A morte como retorno ao campo",
+          "conteudo": [
+            "Paramahansa Yogananda ensinava que a morte é como mudar de roupa: a consciência deixa um corpo físico que cumpriu seu ciclo e retorna ao campo universal.",
+            "O conceito de 'campo' é usado tanto em física quântica quanto em tradições espirituais para descrever o plano onde tudo é energia e informação. A morte, nesse contexto, não é um fim, mas uma transição.",
+            "O medo da morte vem da identificação exclusiva com o corpo físico. Quando compreendemos que a consciência é contínua, a morte perde seu caráter trágico e se torna um portal de retorno à origem."
+          ]
+        },
+        {
+          "titulo": "Reencarnação e a memória vibracional",
+          "conteudo": [
+            "Segundo Allan Kardec, a reencarnação é a forma pela qual o espírito evolui. Cada vida é uma oportunidade de aprendizado e depuração kármica.",
+            "Pierre Riffard aponta que memórias de vidas passadas são arquivadas em uma dimensão sutil do ser — uma espécie de 'campo morfogenético espiritual'.",
+            "Essas memórias não são lembradas racionalmente, mas influenciam medos, talentos, traumas e até preferências inexplicáveis. A regressão de memória e os sonhos simbólicos podem acessá-las."
+          ]
+        },
+        {
+          "titulo": "O tempo como ilusão e ferramenta de evolução",
+          "conteudo": [
+            "Na visão espiritual e quântica, o tempo não é linear, mas relativo. Passado, presente e futuro coexistem como possibilidades colapsadas pela consciência.",
+            "O agora é o único ponto real de poder. Tudo acontece no eterno presente. Esse é o ensinamento central de mestres como Yogananda e Eckhart Tolle.",
+            "O tempo serve como ferramenta para organizar experiências na matéria. Fora do corpo físico, a alma se desloca por campos de vibração, não por linhas temporais."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_esp_3_1",
+          "descricao": "Pratique a 'Meditação do Eterno Agora': foque por 10 minutos apenas na respiração e em tudo o que existe neste exato instante.",
+          "xp": 15,
+          "pontos": 10,
+          "energia": 3,
+          "tipo": "espiritual"
+        },
+        {
+          "id": "tarefa_esp_3_2",
+          "descricao": "Desenhe sua Roda Kármica: represente graficamente eventos marcantes da vida e suas possíveis raízes espirituais.",
+          "xp": 18,
+          "pontos": 14,
+          "energia": 4,
+          "tipo": "reflexiva"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Como foi a experiência de meditar no presente absoluto?",
+          "O que descobriu ao refletir sobre sua Roda Kármica?",
+          "A visão da morte e do tempo mudou para você após esse capítulo?"
+        ]
+      },
+      "pontosMinimos": 0
+    },
+    {
+      "id": "espiritualidade_4",
+      "titulo": "A Árvore da Vida Interior",
+      "descricao": "Descubra a estrutura sagrada da Cabalah Hermética dentro de si mesmo e percorra o caminho do iniciado rumo à integração plena entre corpo, mente, espírito e universo.",
+      "topicos": [
+        {
+          "titulo": "A estrutura da Cabalah aplicada ao ser humano",
+          "conteudo": [
+            "A Árvore da Vida, pilar central da Cabalah Hermética, é composta por 10 sefirot (esferas) e 22 caminhos que formam um mapa espiritual, psicológico e energético do ser humano.",
+            "Cada sefirá representa um aspecto da consciência — desde o divino (Kether) até a manifestação física (Malkuth). Essas esferas não são entidades externas, mas níveis internos de percepção e evolução que coexistem dentro de cada um.",
+            "Gregg Braden aponta que a geometria sagrada e os arquétipos da Árvore da Vida são espelhados no DNA, no campo eletromagnético do coração e até na estrutura do cérebro.",
+            "Entender essa estrutura permite alinhar nossas decisões, emoções e atitudes com as leis universais e desenvolver uma espiritualidade prática e integrada."
+          ]
+        },
+        {
+          "titulo": "O Caminho do Iniciado pelas sefirot",
+          "conteudo": [
+            "O iniciado espiritual percorre, simbolicamente, os caminhos entre as sefirot como uma jornada de ascensão interior.",
+            "De Malkuth (mundo material) até Kether (consciência pura), o caminhar pelas sefirot representa desafios como equilibrar força (Geburah) com compaixão (Chesed), razão (Hod) com intuição (Netzach), e desenvolver Tiferet — o centro do coração e da beleza espiritual.",
+            "Jan van Rijckenborgh descreve esse processo como a Rosa que floresce no coração, símbolo do despertar do Eu Superior que unifica todos os níveis da Árvore.",
+            "O caminho não é linear: há subidas, quedas e integrações profundas que exigem humildade, disciplina e coragem interior."
+          ]
+        },
+        {
+          "titulo": "Integração corpo-mente-espírito-universo",
+          "conteudo": [
+            "Cada sefirá possui correspondência com partes do corpo, funções mentais, estados emocionais e planetas. A prática da Cabalah Hermética busca a reintegração dessas dimensões, que muitas vezes se encontram dissociadas.",
+            "Quando a mente está desconectada do corpo, ou quando as emoções reprimem a intuição, perdemos o equilíbrio espiritual. A Árvore da Vida nos convida a reconectar todas as partes, reconhecendo que tudo em nós é manifestação do Uno.",
+            "Essa integração leva à autorrealização e à dissolução das ilusões do ego. Como ensinava a tradição Rosacruz, 'o que está em cima é como o que está embaixo', e o microcosmo humano é reflexo do macrocosmo universal.",
+            "Meditar sobre cada sefirá como uma virtude a ser cultivada — sabedoria, força, amor, equilíbrio — permite essa reintegração consciente do ser com o Todo."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_esp_4_1",
+          "descricao": "Desenhe sua Árvore da Vida Pessoal: represente suas forças, desafios e aprendizados em cada uma das 10 sefirot.",
+          "xp": 20,
+          "pontos": 15,
+          "energia": 5,
+          "tipo": "espiritual"
+        },
+        {
+          "id": "tarefa_esp_4_2",
+          "descricao": "Escolha uma sefirá (como Tiferet ou Hod) e pratique sua virtude correspondente por 3 dias consecutivos.",
+          "xp": 18,
+          "pontos": 12,
+          "energia": 4,
+          "tipo": "comportamental"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Qual sefirá você sentiu mais presente em sua vida neste momento?",
+          "Houve alguma dificuldade em representar sua Árvore da Vida pessoal?",
+          "Você percebeu mudanças práticas ao cultivar a virtude escolhida?"
+        ]
+      },
+      "pontosMinimos": 25
+    },
+    {
+      "id": "espiritualidade_5",
+      "titulo": "A Nova Consciência: Ciência, Mística e Transformação",
+      "descricao": "Descubra como ciência moderna e espiritualidade convergem para formar uma nova visão da realidade, unindo física, consciência e propósito evolutivo.",
+      "topicos": [
+        {
+          "titulo": "Ciência moderna e espiritualidade convergem",
+          "conteudo": [
+            "A ciência do século XXI tem se aproximado cada vez mais de verdades místicas milenares. Fritjof Capra, em 'O Tao da Física', mostra como a física quântica e o misticismo oriental compartilham visões sobre a interconexão universal.",
+            "Stephen Hawking, embora cético, reconheceu que a existência de leis tão precisas sugere um princípio organizador. Isso ecoa o pensamento de que a consciência é um fator fundamental no universo.",
+            "A espiritualidade não precisa mais estar em conflito com a ciência. Ambas revelam camadas complementares de uma realidade única, em que o observador molda o observado e a consciência é parte integrante do cosmos."
+          ]
+        },
+        {
+          "titulo": "O Campo Unificado e a consciência como força",
+          "conteudo": [
+            "A teoria do Campo Unificado sugere que todas as forças da natureza derivam de uma única fonte vibracional. Para cientistas como Amit Goswami e Nassim Haramein, esse campo é vivo e consciente.",
+            "A consciência, nesse contexto, não é apenas produto do cérebro, mas a base da existência — uma matriz inteligente que estrutura a realidade.",
+            "Essa visão nos permite entender experiências espirituais, sincronicidades e manifestações como efeitos diretos da interação entre mente e campo quântico."
+          ]
+        },
+        {
+          "titulo": "O futuro da espiritualidade aplicada",
+          "conteudo": [
+            "A espiritualidade do futuro não será dogmática, mas experiencial. Será baseada em práticas que unam meditação, ciência, arte e serviço ao planeta.",
+            "A nova consciência integra ecologia, neurociência, psicologia transpessoal e ativismo compassivo. A transformação espiritual não será mais isolada, mas coletiva e regenerativa.",
+            "A missão de cada ser será reconhecida como parte do organismo planetário. Ao despertar, o indivíduo atua como célula consciente na cura do mundo."
+          ]
+        },
+        {
+          "titulo": "Prática: Jornada Visionária de Manifestação Global",
+          "conteudo": [
+            "Meditação guiada com visualização de uma Terra regenerada, onde cada pessoa expressa sua missão com sabedoria, e a humanidade vive em sincronia com o campo unificado.",
+            "Inclui som binaural, escrita intuitiva e envio de intenção coletiva para o campo da consciência global."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_esp_5_1",
+          "descricao": "Participe da Jornada Visionária e registre as imagens, sensações e insights recebidos.",
+          "xp": 20,
+          "pontos": 15,
+          "energia": 4,
+          "tipo": "visualizacao"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "O que você sentiu ao visualizar o futuro regenerado da humanidade?",
+          "Algum insight prático surgiu durante a jornada?"
+        ]
+      },
+      "pontosMinimos": 30
+    },
+    {
+      "id": "espiritualidade_6",
+      "titulo": "Vivendo o Ser: Integração e Serviço",
+      "descricao": "Aprofunde a integração espiritual através do serviço consciente, descobrindo como missão e ação no mundo se tornam extensões do eu desperto.",
+      "topicos": [
+        {
+          "titulo": "A missão como ponte entre o eu e o mundo",
+          "conteudo": [
+            "Danah Zohar propõe o conceito de Inteligência Espiritual (QS), a capacidade de agir com compaixão, visão e propósito. A missão de vida não é algo externo, mas o próprio fluxo do ser em ação.",
+            "Deepak Chopra ensina que o dharma pessoal é a interseção entre nossos talentos únicos e as necessidades do mundo. Servir se torna uma expressão natural da autenticidade.",
+            "Quando alinhamos vocação com valores e consciência, deixamos de buscar sentido fora e nos tornamos o próprio sentido."
+          ]
+        },
+        {
+          "titulo": "Liderança espiritual e serviço ao próximo",
+          "conteudo": [
+            "Millman ensina que o guerreiro pacífico é aquele que lidera pelo exemplo, não pelo controle. A nova liderança espiritual é colaborativa, empática e comprometida com o bem comum.",
+            "Serviço não é caridade, mas conexão. Cada ato de cuidado é uma ponte vibracional que transforma quem dá e quem recebe.",
+            "Liderar espiritualmente é iluminar espaços escuros com presença, escuta e ação consciente."
+          ]
+        },
+        {
+          "titulo": "O iniciado na sociedade moderna",
+          "conteudo": [
+            "O iniciado não se isola do mundo. Ele se torna alquimista das relações, da política, da economia e da cultura.",
+            "Compreende que cada sistema pode ser espiritualizado — do consumo à educação — e age para plantar sementes de consciência onde quer que esteja.",
+            "O mundo moderno é o campo de atuação do espírito desperto, que escolhe viver com presença e responsabilidade em todas as dimensões da vida."
+          ]
+        },
+        {
+          "titulo": "Prática: Mapa de Missão de Vida + Ação no Mundo",
+          "conteudo": [
+            "Crie um mapa visual que una seus talentos, paixões, causas e formas de expressão prática. Depois, planeje uma ação concreta (individual ou coletiva) em sua comunidade.",
+            "Exemplos: criar conteúdo sobre propósito, liderar um círculo de meditação, apoiar uma causa ambiental, orientar jovens, etc."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_esp_6_1",
+          "descricao": "Desenhe seu Mapa de Missão de Vida e execute uma ação prática no mundo alinhada com ele.",
+          "xp": 22,
+          "pontos": 18,
+          "energia": 5,
+          "tipo": "proposito"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Como foi unir missão interna com ação prática?",
+          "Você sentiu mais sentido ou conexão ao servir?"
+        ]
+      },
+      "pontosMinimos": 35
+    }
+  ]
+}

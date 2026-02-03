@@ -1,0 +1,191 @@
+{
+  "area": "Finanças",
+  "icone": "wallet",
+  "cor": "#4fd1c5",
+  "descricao": "Desenvolva consciência e equilíbrio financeiro.",
+  "capitulos": [
+    {
+      "id": "financas_1",
+      "titulo": "Consciência Financeira",
+      "descricao": "Entenda o dinheiro como energia e ferramenta de realização.",
+      "topicos": [
+        {
+          "titulo": "Dinheiro como energia",
+          "conteudo": [
+            "O dinheiro é uma forma de energia de troca.",
+            "Relacionar-se bem com ele começa com clareza e gratidão.",
+            "A prosperidade começa na mente e nas pequenas escolhas diárias.",
+            {
+              "referencia": {
+                "area": "Espiritualidade",
+                "capituloId": "espiritualidade_1",
+                "texto": "Veja também: A Energia da Consciência"
+              }
+            }
+          ]
+        },
+        {
+          "titulo": "Organização financeira",
+          "conteudo": [
+            "Ter controle dos gastos traz segurança e liberdade.",
+            "Planejar evita surpresas e reduz o estresse financeiro.",
+            {
+              "referencia": {
+                "area": "Finanças",
+                "capituloId": "financas_2",
+                "texto": "Leia sobre Planejamento e Sonhos"
+              }
+            }
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_1",
+          "descricao": "Liste suas 3 últimas compras e avalie se foram conscientes.",
+          "xp": 40,
+          "pontos": 10,
+          "energia": 147,
+          "tipo": "racional"
+        },
+        {
+          "id": "tarefa_2",
+          "descricao": "Organize seus gastos da semana em uma planilha ou app.",
+          "xp": 35,
+          "pontos": 7,
+          "energia": 10,
+          "tipo": "racional"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Você identificou padrões de gasto emocional?",
+          "Conseguiu ver valor no que gastou?",
+          "Como foi sua sensação ao fazer essa análise?"
+        ]
+      }
+    },
+    {
+      "id": "financas_2",
+      "titulo": "Planejamento e Sonhos",
+      "descricao": "Use o dinheiro como aliado para realizar objetivos.",
+      "topicos": [
+        {
+          "titulo": "Metas financeiras",
+          "conteudo": [
+            "Definir metas ajuda a direcionar o uso do dinheiro.",
+            "Sonhar é o primeiro passo para conquistar.",
+            {
+              "referencia": {
+                "area": "Emoções e Mente",
+                "capituloId": "emocoes_2",
+                "texto": "Veja também: Resiliência Emocional"
+              }
+            }
+          ]
+        },
+        {
+          "titulo": "Investindo no futuro",
+          "conteudo": [
+            "Guardar um pouco todo mês faz diferença a longo prazo.",
+            "Educação financeira é um investimento em você mesmo."
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_1",
+          "descricao": "Defina uma meta financeira para o próximo mês.",
+          "xp": 10,
+          "pontos": 7,
+          "energia": 2,
+          "tipo": "racional"
+        },
+        {
+          "id": "tarefa_2",
+          "descricao": "Pesquise sobre um investimento seguro e anote o que aprendeu.",
+          "xp": 12,
+          "pontos": 8,
+          "energia": 2,
+          "tipo": "mental"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Você conseguiu definir uma meta clara?",
+          "O que aprendeu sobre investimentos?",
+          "Como pretende aplicar esse conhecimento?"
+        ]
+      }
+    },
+    {
+      "id": "financas_3",
+      "titulo": "O Princípio da Abundância",
+      "descricao": "Compreenda o dinheiro como energia condensada e aprenda a alinhar espiritualidade, propósito e fluxo financeiro em harmonia com o universo.",
+      "topicos": [
+        {
+          "titulo": "Dinheiro como forma condensada de energia",
+          "conteudo": [
+            "O dinheiro não é apenas um papel ou número em conta. Ele representa energia de troca, cristalizada em forma material. Assim como a matéria é energia condensada, o dinheiro também carrega intenção, valor simbólico e frequência.",
+            "No Caibalion, aprendemos que 'Tudo é Vibração'. A forma como nos relacionamos com o dinheiro — medo, escassez, gratidão, confiança — afeta diretamente o quanto fluímos ou bloqueamos sua manifestação em nossas vidas.",
+            "Como energia, o dinheiro responde à clareza de propósito e à coerência vibracional.",
+            {
+              "referencia": {
+                "area": "Saúde Física",
+                "capituloId": "saude_3",
+                "texto": "Leia também: 'O Corpo Quântico e o Templo da Alma' sobre energia e materialização"
+              }
+            }
+          ]
+        },
+        {
+          "titulo": "Prosperidade espiritual e Sefirá Netzach",
+          "conteudo": [
+            "Na Árvore da Vida da Cabalah, Netzach representa a energia criativa que flui por meio da beleza, desejo e realização. É a força da manifestação vibrando através da ação inspirada.",
+            "Prosperidade não é acúmulo. É fluxo, alinhamento com a abundância do universo. Quando agimos com intenção elevada e valores justos, a prosperidade é consequência natural.",
+            "A verdadeira riqueza é viver com sentido, contribuindo com o mundo sem desconectar-se do coração."
+          ]
+        },
+        {
+          "titulo": "Karma financeiro e o fluxo do universo",
+          "conteudo": [
+            "Assim como há leis físicas, há leis espirituais no campo financeiro. O karma financeiro se manifesta através de ciclos de aprendizado, escassez ou abundância, em resposta ao uso consciente ou inconsciente dos recursos.",
+            "Doar, investir com ética, evitar exploração e agir com gratidão são formas de alinhar-se ao fluxo universal da abundância. Tudo o que damos, retorna. Mas é a intenção que define a vibração daquilo que volta.",
+            {
+              "imagem": "fluxo_abundancia_karmica.png"
+            }
+          ]
+        }
+      ],
+      "tarefas": [
+        {
+          "id": "tarefa_financas_3_1",
+          "descricao": "Escreva sua crença mais profunda sobre dinheiro e reflita sobre sua origem. Ela te limita ou te impulsiona?",
+          "xp": 15,
+          "pontos": 12,
+          "energia": 4,
+          "tipo": "mental"
+        },
+        {
+          "id": "tarefa_financas_3_2",
+          "descricao": "Realize o 'Ritual do Propósito e Abundância Consciente': acenda uma vela, respire profundamente e afirme seu propósito de vida enquanto visualiza o fluxo financeiro vindo com harmonia.",
+          "xp": 20,
+          "pontos": 16,
+          "energia": 6,
+          "tipo": "espiritual"
+        }
+      ],
+      "feedback": {
+        "ativo": true,
+        "perguntas": [
+          "Você sentiu mudança de energia após o ritual de abundância?",
+          "Conseguiu identificar padrões inconscientes que afetam sua relação com o dinheiro?",
+          "Como pretende alinhar suas finanças ao seu propósito maior?"
+        ]
+      },
+      "pontosMinimos": 20
+    }
+  ]
+}
