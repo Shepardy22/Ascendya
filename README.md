@@ -65,11 +65,11 @@
 ### Tela Principal
 ![Home Screen](./docs/images/screenshots/mobile_home.png)
 
-### Capítulos e Tarefas
+### Capítulos 
 ![Chapter Screen](./docs/images/screenshots/mobile_chapter.png)
 
-### Sistema de Progresso
-![Progress System](./docs/images/screenshots/mobile_progress.png)
+### Anotações Pessoais
+![Personal Notes](./docs/images/screenshots/mobile_notes.png)
 
 </details>
 

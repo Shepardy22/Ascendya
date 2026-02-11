@@ -14,6 +14,10 @@ export default function CadastroScreen({ navigation }) {
 
   async function handleCadastro() {
     //const auth = getAuth(app);
+    if (senha.length < 6) {
+      Alert.alert('Senha muito curta', 'A senha deve ter no mínimo 6 caracteres.');
+      return;
+    }
     setLoading(true);
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
@@ -21,9 +25,9 @@ export default function CadastroScreen({ navigation }) {
       Alert.alert('Sucesso', 'Cadastro realizado com sucesso!');
       navigation.goBack();
     } catch (e) {
-  Alert.alert('Erro', e.message || 'Não foi possível cadastrar');
-  console.log('Erro ao cadastrar:', e);
-}
+      Alert.alert('Erro', e.message || 'Não foi possível cadastrar');
+      console.log('Erro ao cadastrar:', e);
+    }
     setLoading(false);
   }
 
