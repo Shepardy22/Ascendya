@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, Alert, Image } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, Alert, Image, ImageBackground } from 'react-native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../firebaseConfig'; // db adicionado
 import { doc, getDoc, setDoc } from 'firebase/firestore';
@@ -60,7 +60,6 @@ export default function LoginScreen({ navigation, onLogin }) {
       await AsyncStorage.setItem('user', JSON.stringify(userData));
       setUser(userData);
 
-      Alert.alert('Sucesso', 'Login realizado com sucesso!');
       onLogin && onLogin(firebaseUser.uid);
     } catch (e) {
       Alert.alert('Erro', e.message || 'Não foi possível logar');
@@ -74,40 +73,47 @@ export default function LoginScreen({ navigation, onLogin }) {
   }
 
   return (
-    <View style={styles.container}>
-      <Image
-        source={require('../assets/images/Logo.png')}
-        style={styles.logo}
-        resizeMode="contain"
-      />
-      <Text style={styles.title}>Login</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="E-mail"
-        value={email}
-        onChangeText={setEmail}
-        autoCapitalize="none"
-        keyboardType="email-address"
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Senha"
-        value={senha}
-        onChangeText={setSenha}
-        secureTextEntry
-      />
-      <TouchableOpacity style={styles.button} onPress={handleLogin} disabled={loading}>
-        {loading ? <ActivityIndicator color="#fff" /> : <Text style={styles.buttonText}>Entrar</Text>}
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.cadastroButton} onPress={handleCadastro}>
-        <Text style={styles.cadastroText}>Criar nova conta</Text>
-      </TouchableOpacity>
-    </View>
+    <ImageBackground
+      source={require('../assets/images/fundoAPP.jpg')} // Troque para outra imagem se desejar
+      style={styles.background}
+      resizeMode="cover"
+    >
+      <View style={styles.container}>
+        <Image
+          source={require('../assets/images/Logo.png')}
+          style={styles.logo}
+          resizeMode="contain"
+        />
+        <Text style={styles.title}>Login</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="E-mail"
+          value={email}
+          onChangeText={setEmail}
+          autoCapitalize="none"
+          keyboardType="email-address"
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Senha"
+          value={senha}
+          onChangeText={setSenha}
+          secureTextEntry
+        />
+        <TouchableOpacity style={styles.button} onPress={handleLogin} disabled={loading}>
+          {loading ? <ActivityIndicator color="#fff" /> : <Text style={styles.buttonText}>Entrar</Text>}
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.cadastroButton} onPress={handleCadastro}>
+          <Text style={styles.cadastroText}>Criar nova conta</Text>
+        </TouchableOpacity>
+      </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', backgroundColor: '#1c1b21', padding: 24 },
+  background: { flex: 1, width: '100%', height: '100%' },
+  container: { flex: 1, justifyContent: 'center', backgroundColor: 'rgba(28,27,33,0.85)', padding: 24 },
   logo: { width: 120, height: 120, alignSelf: 'center', marginBottom: 16 },
   title: { color: '#e4e2f1', fontSize: 24, fontWeight: 'bold', marginBottom: 24, textAlign: 'center' },
   input: { backgroundColor: '#28263a', color: '#fff', borderRadius: 8, padding: 12, marginBottom: 16 },

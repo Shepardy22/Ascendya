@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, Dimensions, Alert, Platform } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, Dimensions, Alert, ImageBackground } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import { UserContext } from '../context/UserContext';
@@ -130,6 +130,13 @@ export default function HomeScreen({ navigation, onLogout }) {
   }
   const imgSrc = getImagem('Logo.png');
   return (
+
+      <ImageBackground
+            source={require('../assets/images/fundoAPP.jpg')} // Troque para outra imagem se desejar
+            style={styles.background}
+            resizeMode="cover"
+          >
+
     <SafeAreaView style={styles.container}>
       {/* Cabeçalho com botão de logout */}
       <View style={styles.headerContainer}>
@@ -196,15 +203,21 @@ export default function HomeScreen({ navigation, onLogout }) {
         ))}
       </View>
     </SafeAreaView>
+          </ImageBackground>
+    
   );
 }
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+  },
   container: {
-    backgroundColor: '#1c1b21',
+    backgroundColor: 'rgba(28,27,33,0.85)',
     flex: 1,
     paddingHorizontal: 24,
-    //paddingTop: 24,
     paddingBottom: 12,
   },
   headerContainer: {
