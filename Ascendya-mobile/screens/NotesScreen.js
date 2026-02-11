@@ -33,6 +33,10 @@ export default function NotesScreen({ navigation: navProp, route }) {
   }
 
   return (
+
+    
+
+
     <View style={styles.container}>
       <View style={styles.headerRow}>
         <TouchableOpacity style={styles.backButton} onPress={() => navigation.goBack()}>

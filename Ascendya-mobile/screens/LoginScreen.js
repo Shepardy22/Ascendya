@@ -74,7 +74,7 @@ export default function LoginScreen({ navigation, onLogin }) {
 
   return (
     <ImageBackground
-      source={require('../assets/images/fundoAPP.jpg')} // Troque para outra imagem se desejar
+      source={require('../assets/images/Logo.png')} // Troque para outra imagem se desejar
       style={styles.background}
       resizeMode="cover"
     >

@@ -43,6 +43,8 @@ export default function ChapterScreen() {
   const pontosArea = getPontosArea();
 
   return (
+
+    
     <View style={styles.container}>
       <View style={styles.headerRow}>
         <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Home')}>
