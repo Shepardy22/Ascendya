@@ -3,6 +3,53 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar, SafeAreaView, Platform, StyleSheet } from 'react-native';
 
+// Web-specific imports
+if (Platform.OS === 'web') {
+  // Inject mobile viewport meta tag
+  const meta = document.createElement('meta');
+  meta.name = 'viewport';
+  meta.content = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover';
+  document.head.appendChild(meta);
+
+  // Inject global styles for mobile-first design
+  const style = document.createElement('style');
+  style.textContent = `
+    html, body, #root {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #0f0e13;
+    }
+    
+    /* Container principal com largura máxima mobile */
+    #root > div {
+      max-width: 480px;
+      margin: 0 auto;
+      height: 100%;
+      background-color: #1c1b21;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Responsivo para telas maiores */
+    @media (min-width: 481px) {
+      body {
+        background: linear-gradient(135deg, #0f0e13 0%, #1a1a2e 100%);
+      }
+      
+      #root > div {
+        border-radius: 20px;
+        margin-top: 20px;
+        height: calc(100% - 40px);
+        overflow: hidden;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+
 import HomeScreen from './screens/HomeScreen';
 import ChapterScreen from './screens/ChapterScreen';
 import TaskScreen from './screens/TaskScreen';
@@ -53,7 +100,7 @@ export default function App() {
     <UserProvider value={{ user, setUser }}>
       <SafeAreaView style={styles.safeArea}>
         <NavigationContainer>
-          <StatusBar barStyle="light-content" backgroundColor="#1c1b21" translucent={true}/>
+          <StatusBar barStyle="light-content" backgroundColor="#1c1b21" translucent={true} />
           <Stack.Navigator screenOptions={{ headerShown: false }}>
             {!userId ? (
               <>
@@ -69,7 +116,14 @@ export default function App() {
               </>
             ) : (
               <>
-                <Stack.Screen name="Home" component={HomeScreen} />
+                <Stack.Screen name="Home">
+                  {props => (
+                    <HomeScreen
+                      {...props}
+                      onLogout={() => setUserId(null)}
+                    />
+                  )}
+                </Stack.Screen>
                 <Stack.Screen name="Chapter" component={ChapterScreen} />
                 <Stack.Screen name="Task" component={TaskScreen} />
                 <Stack.Screen name="Feedback" component={FeedbackScreen} />

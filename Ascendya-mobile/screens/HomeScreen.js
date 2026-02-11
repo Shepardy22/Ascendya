@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, Dimensions, Alert, Platform } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 import { UserContext } from '../context/UserContext';
@@ -21,15 +21,41 @@ function getImagem(nome) {
   return imagens[nome] || null;
 }
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen({ navigation, onLogout }) {
   const { user } = useContext(UserContext);
   const [areas, setAreas] = useState([]);
 
-  
+  // Função de logout
+  const handleLogout = () => {
+    Alert.alert(
+      'Sair',
+      'Deseja realmente fazer logout?',
+      [
+        {
+          text: 'Cancelar',
+          style: 'cancel'
+        },
+        {
+          text: 'Sair',
+          style: 'destructive',
+          onPress: async () => {
+            await AsyncStorage.removeItem('userId');
+            await AsyncStorage.removeItem('userName');
+            // Chama o callback para atualizar o estado no App.js
+            if (onLogout) {
+              onLogout();
+            }
+          }
+        }
+      ]
+    );
+  };
+
+
   const [userName, setUserName] = useState('Explorador');
   useEffect(() => {
     AsyncStorage.getItem('userName').then(name => {
-      if (name){
+      if (name) {
         setUserName(name);
       }
     });
@@ -102,11 +128,20 @@ export default function HomeScreen({ navigation }) {
       </View>
     );
   }
-const imgSrc = getImagem('Logo.png');
+  const imgSrc = getImagem('Logo.png');
   return (
     <SafeAreaView style={styles.container}>
-      {/* Cabeçalho */}
-      <Text style={styles.header}>Ascendya</Text>
+      {/* Cabeçalho com botão de logout */}
+      <View style={styles.headerContainer}>
+        <Text style={styles.header}>Ascendya</Text>
+        <TouchableOpacity
+          style={styles.logoutButton}
+          onPress={handleLogout}
+          activeOpacity={0.7}
+        >
+          <FontAwesome5 name="sign-out-alt" size={18} color="#9f84ff" />
+        </TouchableOpacity>
+      </View>
 
       {/* Avatar e Nome */}
       <View style={styles.avatarSection}>
@@ -135,7 +170,7 @@ const imgSrc = getImagem('Logo.png');
       {/* Áreas do Conhecimento */}
       <Text style={styles.sectionTitle}>Áreas do Conhecimento</Text>
       <View style={styles.areasFlexContainer}>
-        
+
         {areas.map((area, index) => (
           <View style={styles.areaFlexItem} key={index}>
             <TouchableOpacity
@@ -172,12 +207,27 @@ const styles = StyleSheet.create({
     //paddingTop: 24,
     paddingBottom: 12,
   },
+  headerContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 8,
+    position: 'relative',
+  },
   header: {
     fontSize: 24,
     fontWeight: 'bold',
     color: '#e4e2f1',
     textAlign: 'center',
-    marginBottom: 8,
+  },
+  logoutButton: {
+    position: 'absolute',
+    right: 0,
+    padding: 8,
+    backgroundColor: 'rgba(159, 132, 255, 0.1)',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: 'rgba(159, 132, 255, 0.2)',
   },
   avatarSection: {
     alignItems: 'center',
@@ -193,12 +243,12 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     overflow: 'hidden',
     marginBottom: 8,
-},
-avatarImage: {
+  },
+  avatarImage: {
     width: '100%',
     height: '100%',
     resizeMode: 'contain', // garante que a imagem não seja cortada
-},
+  },
   avatarSection: {
     alignItems: 'center',
     marginBottom: 16,

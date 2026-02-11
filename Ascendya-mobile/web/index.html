@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Força visualização mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <title>Ascendya</title>
+    
+    <style>
+      /* Reset e configuração mobile-first */
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      
+      html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+        background-color: #1c1b21;
+      }
+      
+      /* Container principal com largura máxima mobile */
+      #root {
+        width: 100%;
+        max-width: 480px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        background-color: #1c1b21;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      }
+      
+      /* Loading screen */
+      #loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background-color: #1c1b21;
+      }
+      
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(159, 132, 255, 0.2);
+        border-top-color: #9f84ff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      /* Responsivo para telas maiores - mantém aparência mobile */
+      @media (min-width: 481px) {
+        body {
+          background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+        
+        #root {
+          border-radius: 20px;
+          margin-top: 20px;
+          height: calc(100% - 40px);
+          overflow: hidden;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>Você precisa habilitar JavaScript para executar este app.</noscript>
+    
+    <div id="root">
+      <div id="loading">
+        <div class="spinner"></div>
+      </div>
+    </div>
+  </body>
+</html>
