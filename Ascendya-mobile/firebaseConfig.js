@@ -12,15 +12,26 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform } from 'react-native';
 
 
-// Configurações do seu projeto Firebase
+
+import Constants from 'expo-constants';
+
+// Função para obter variáveis de ambiente de forma multiplataforma
+function getEnvVar(name) {
+  if (Platform.OS === 'web') {
+    return process.env[name];
+  }
+  // Para mobile, usa extra do app.config.js/app.json
+  return Constants.expoConfig?.extra?.[name] || Constants.manifest?.extra?.[name];
+}
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBWq4r1qCc_KbXZfaSA17hD7c5MzYG6nLo",
-  authDomain: "ascendya-d57e7.firebaseapp.com",
-  projectId: "ascendya-d57e7",
-  storageBucket: "ascendya-d57e7.appspot.com",
-  messagingSenderId: "319242394939",
-  appId: "1:319242394939:web:e1513496e00a366f8eab1e",
-  measurementId: "G-VJY5NV5J60"
+  apiKey: getEnvVar('FIREBASE_API_KEY'),
+  authDomain: getEnvVar('FIREBASE_AUTH_DOMAIN'),
+  projectId: getEnvVar('FIREBASE_PROJECT_ID'),
+  storageBucket: getEnvVar('FIREBASE_STORAGE_BUCKET'),
+  messagingSenderId: getEnvVar('FIREBASE_MESSAGING_SENDER_ID'),
+  appId: getEnvVar('FIREBASE_APP_ID'),
+  measurementId: getEnvVar('FIREBASE_MEASUREMENT_ID'),
 };
 
 // Inicializa o Firebase App

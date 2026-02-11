@@ -707,16 +707,13 @@ Usamos [Conventional Commits](https://www.conventionalcommits.org/):
 - [x] Sincronização de dados
 
 ### 🚧 Em Desenvolvimento
-- [ ] Modo offline completo
-- [ ] Notificações push
-- [ ] Compartilhamento de progresso
-- [ ] Temas personalizáveis
+- [ ] Novos conteúdos
+- [ ] Novos tipos de tarefas
 
 ### 🔮 Futuro
 - [ ] Comunidade integrada
 - [ ] Desafios semanais
 - [ ] Ranking global
-- [ ] Integração com wearables
 - [ ] IA para recomendações personalizadas
 
 ---
@@ -726,10 +723,10 @@ Usamos [Conventional Commits](https://www.conventionalcommits.org/):
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/seu-usuario">
-        <img src="https://github.com/seu-usuario.png" width="100px;" alt=""/>
+      <a href="https://github.com/Shepardy22">
+        <img src="https://github.com/Shepardy22.png" width="100px;" alt=""/>
         <br />
-        <sub><b>Seu Nome</b></sub>
+        <sub><b>Shepardy</b></sub>
       </a>
       <br />
       <sub>Criador</sub>
@@ -745,19 +742,9 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ---
 
-## 🙏 Agradecimentos
 
-- Comunidade React Native
-- Comunidade Electron
-- Firebase Team
-- Todos os contribuidores
-
-
----
 
 <div align="center">
-
-**Feito com ❤️ para transformar vidas**
 
 ⭐ Se este projeto te ajudou, considere dar uma estrela!
 
