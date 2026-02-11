@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Ascendya Logo](./docs/images/logo.png)
+<img src="./docs/images/Logo.png" alt="Ascendya Logo" width="200"/>
 
 **Transforme sua vida através da gamificação e autoconhecimento**
 
@@ -60,16 +60,16 @@
 <summary><b>📱 Ascendya Mobile - Capturas de Tela</b></summary>
 
 ### Tela de Login
-![Login Screen](./docs/images/screenshots/mobile_login.png)
+<img src="./docs/images/screenshots/mobile_login.png" alt="Login Screen" width="350"/>
 
 ### Tela Principal
-![Home Screen](./docs/images/screenshots/mobile_home.png)
+<img src="./docs/images/screenshots/mobile_home.png" alt="Home Screen" width="350"/>
 
 ### Capítulos 
-![Chapter Screen](./docs/images/screenshots/mobile_chapter.png)
+<img src="./docs/images/screenshots/mobile_chapter.png" alt="Chapter Screen" width="350"/>
 
 ### Anotações Pessoais
-![Personal Notes](./docs/images/screenshots/mobile_notes.png)
+<img src="./docs/images/screenshots/mobile_notes.png" alt="Personal Notes" width="350"/>
 
 </details>
 
@@ -77,13 +77,13 @@
 <summary><b>🖥️ Ascendya Manager - Interface</b></summary>
 
 ### Editor Principal
-![Manager Main](./docs/images/screenshots/manager_main.png)
+<img src="./docs/images/screenshots/manager_main.png" alt="Manager Main" width="350"/>
 
 ### Edição de Capítulos
-![Chapter Editor](./docs/images/screenshots/manager_editor.png)
+<img src="./docs/images/screenshots/manager_editor.png" alt="Chapter Editor" width="350"/>
 
 ### Menu de Referências
-![References Menu](./docs/images/screenshots/manager_sidebar.png)
+<img src="./docs/images/screenshots/manager_sidebar.png" alt="References Menu" width="350"/>
 
 </details>
 

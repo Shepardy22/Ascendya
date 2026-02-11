@@ -305,6 +305,7 @@ const styles = StyleSheet.create({
   areasFlexContainer: {
     flex: 1,
     justifyContent: 'space-between',
+    paddingHorizontal: 8,
   },
   areaFlexItem: {
     flex: 1,
