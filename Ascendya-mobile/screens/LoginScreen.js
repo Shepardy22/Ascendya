@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, Alert, Image } from 'react-native';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../firebaseConfig'; // db adicionado
 import { doc, getDoc, setDoc } from 'firebase/firestore';
@@ -75,6 +75,11 @@ export default function LoginScreen({ navigation, onLogin }) {
 
   return (
     <View style={styles.container}>
+      <Image
+        source={require('../assets/images/Logo.png')}
+        style={styles.logo}
+        resizeMode="contain"
+      />
       <Text style={styles.title}>Login</Text>
       <TextInput
         style={styles.input}
@@ -103,6 +108,7 @@ export default function LoginScreen({ navigation, onLogin }) {
 
 const styles = StyleSheet.create({
   container: { flex: 1, justifyContent: 'center', backgroundColor: '#1c1b21', padding: 24 },
+  logo: { width: 120, height: 120, alignSelf: 'center', marginBottom: 16 },
   title: { color: '#e4e2f1', fontSize: 24, fontWeight: 'bold', marginBottom: 24, textAlign: 'center' },
   input: { backgroundColor: '#28263a', color: '#fff', borderRadius: 8, padding: 12, marginBottom: 16 },
   button: { backgroundColor: '#9f84ff', borderRadius: 8, padding: 14, alignItems: 'center' },
