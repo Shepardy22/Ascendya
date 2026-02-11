@@ -16,12 +16,14 @@ import { Platform } from 'react-native';
 import Constants from 'expo-constants';
 
 // Função para obter variáveis de ambiente de forma multiplataforma
+
 function getEnvVar(name) {
+  // Para web, process.env é preenchido em tempo de build/export pelo app.config.js
   if (Platform.OS === 'web') {
-    return process.env[name];
+    return process.env[name] || (Constants.expoConfig?.extra?.[name] ?? Constants.manifest?.extra?.[name]);
   }
   // Para mobile, usa extra do app.config.js/app.json
-  return Constants.expoConfig?.extra?.[name] || Constants.manifest?.extra?.[name];
+  return Constants.expoConfig?.extra?.[name] ?? Constants.manifest?.extra?.[name];
 }
 
 const firebaseConfig = {
