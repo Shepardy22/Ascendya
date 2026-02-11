@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Ascendya",
-    "slug": "Ascendya",
+    "slug": "ascendya-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -33,8 +33,10 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "41261eee-e49c-4bd3-95a3-e745cf41db91"
+        "projectId": "eff9fe65-3e86-4e89-a53c-c22e50c3ab47"
       }
-    }
+    },
+    "owner": "shepardynunes"
+    
   }
 }

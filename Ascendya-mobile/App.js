@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import * as Updates from 'expo-updates';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar, SafeAreaView, Platform, StyleSheet } from 'react-native';
@@ -68,6 +69,22 @@ export default function App() {
   const [userId, setUserId] = useState(null);
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  // Verificação automática de atualização OTA Expo
+  useEffect(() => {
+    async function checkForUpdate() {
+      try {
+        const update = await Updates.checkForUpdateAsync();
+        if (update.isAvailable) {
+          await Updates.fetchUpdateAsync();
+          await Updates.reloadAsync();
+        }
+      } catch (e) {
+        // Trate erros de atualização se necessário
+      }
+    }
+    checkForUpdate();
+  }, []);
 
   //AsyncStorage.clear(); // Limpar AsyncStorage para testes
 

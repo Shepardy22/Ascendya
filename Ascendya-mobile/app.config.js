@@ -1,7 +1,7 @@
 // app.config.js
 export default {
     name: "Ascendya",
-    slug: "Ascendya",
+    slug: "ascendya-mobile",
     version: "1.0.0",
     orientation: "portrait",
     icon: "./assets/icon.png",
@@ -40,7 +40,9 @@ export default {
         FIREBASE_APP_ID: process.env.FIREBASE_APP_ID,
         FIREBASE_MEASUREMENT_ID: process.env.FIREBASE_MEASUREMENT_ID,
         eas: {
-            projectId: "41261eee-e49c-4bd3-95a3-e745cf41db91"
+            projectId: "eff9fe65-3e86-4e89-a53c-c22e50c3ab47"
         }
-    }
+    },
+    owner: "shepardynunes"
+    
 };

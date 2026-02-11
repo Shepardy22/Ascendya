@@ -71,21 +71,29 @@
 ### Anotações Pessoais
 <img src="./docs/images/screenshots/mobile_notes.png" alt="Personal Notes" width="350"/>
 
+
 </details>
 
 <details>
 <summary><b>🖥️ Ascendya Manager - Interface</b></summary>
 
-### Editor Principal
+### Editor Principal e Edição de Capítulos
 <img src="./docs/images/screenshots/manager_main.png" alt="Manager Main" width="350"/>
 
-### Edição de Capítulos
-<img src="./docs/images/screenshots/manager_editor.png" alt="Chapter Editor" width="350"/>
-
-### Menu de Referências
-<img src="./docs/images/screenshots/manager_sidebar.png" alt="References Menu" width="350"/>
-
 </details>
+
+---
+
+## 🌐 Teste a Aplicação Online
+
+Você pode testar a versão web do Ascendya sem instalar nada:
+
+👉 [Acesse Ascendya Web](https://ascendya.vercel.app/)
+
+Caso não queira criar um novo usuário, utilize as credenciais demo:
+
+- **Usuário:** explorador
+- **Senha:** root123
 
 ---
 
