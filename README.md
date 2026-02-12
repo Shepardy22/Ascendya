@@ -92,8 +92,8 @@ Você pode testar a versão web do Ascendya sem instalar nada:
 
 Caso não queira criar um novo usuário, utilize as credenciais demo:
 
-- **Usuário:** explorador
-- **Senha:** root123
+- **Email:** demo@demo.com
+- **Senha:** demo123
 
 ---
 
